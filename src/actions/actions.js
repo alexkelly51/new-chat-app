@@ -1,9 +1,14 @@
 import { actionTypes } from './actionTypes'
 
 export const addMessage = (message) => {
+  let defaultMessage = 'blank'
+  let newMessage = !message ? defaultMessage : message
+
   return {
     type: actionTypes.ADD_MESSAGE,
-    value: message
+    content: newMessage, 
+    author: 'alex', 
+    createdAt: Date.now()
   }
 }
 

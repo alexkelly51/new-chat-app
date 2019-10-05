@@ -11,6 +11,11 @@ const initialState = {
       "author":"anonymous77",
       "content":"My name is anonymous77",
       "createdAt":"2017-09-26T23:03:21.194Z"
+    },
+    {
+      "author":"mouse1234",
+      "content":"My name is mouse",
+      "createdAt":"2019-09-26T23:03:21.194Z"
     }
   ],
   chickens: 'chickens'
@@ -23,8 +28,9 @@ const messageReducer = (state = initialState, action) => {
         messages: [
           ...state.messages,
           {
-            content: action.value,
-            completed: false
+            author: action.author,
+            content: action.content,
+            createdAt: action.createdAt
           }
         ]
       })
