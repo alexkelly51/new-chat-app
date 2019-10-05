@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 import moment from 'moment';
-import PropTypes from 'prop-types'
 import './message.css'
 
 class Message extends Component {
-
-  static propTypes = {
-    createdAt: PropTypes.string
-  }
 
   time = () => {
     const { createdAt } = this.props
