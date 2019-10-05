@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { messageAdd } from './actions/actionCreators'
 import { addMessage } from './actions/actions'
 
 class MessageForm extends Component {
@@ -17,9 +16,7 @@ class MessageForm extends Component {
   }
 
   addMessage = () => {
-    console.log('here', this.state.userInput)
-    messageAdd(this.state.userInput)
-    // this.props.dispatch(addMessage(this.state.userInput)) 
+    this.props.dispatch(addMessage(this.state.userInput)) 
   }
 
   render() {

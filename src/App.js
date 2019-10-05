@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import { MessageList } from './MessageList'
-import { MessageForm } from './MessageForm'
+import { MessageListContainer } from './MessageListContainer'
+import { MessageFormContainer } from './MessageFormContainer'
 
 const App = () => {
   return (
@@ -10,8 +10,8 @@ const App = () => {
       <div>
         Chat place
       </div>
-      <MessageList />
-      <MessageForm />
+      <MessageListContainer />
+      <MessageFormContainer />
     </div>
   );
 };

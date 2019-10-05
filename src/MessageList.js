@@ -1,26 +1,20 @@
 import React, { Component } from 'react'
 import { Message } from './Message'
+import { removeMessage } from './actions/actions'
 import './message.css'
 
 class MessageList extends Component {
 
-  messages = [
-    {
-      "author":"anonymous92",
-      "content":"Hello world!",
-      "createdAt":"2017-09-26T23:03:16.365Z"
-    },
-    {
-      "author":"anonymous77",
-      "content":"My name is anonymous77",
-      "createdAt":"2017-09-26T23:03:21.194Z"
-    }
-  ]
+  removeMessage = (messageIndex) => {
+    this.props.dispatch(removeMessage(messageIndex))
+  }
+
   listOfMessages = () => {
+    const { messages } = this.props
+    
+    const listOfMessages = messages.map((message, index) => {
 
-    const listOfMessages = this.messages.map((message) => {
-
-      return (<Message key={message.createdAt} author={message.author} content={message.content} createdAt={message.createdAt}/>)
+      return (<Message key={index} index={index} author={message.author} content={message.content} createdAt={message.createdAt} removeMessage={this.removeMessage}/>)
     })
 
     return listOfMessages
