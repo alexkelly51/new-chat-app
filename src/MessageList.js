@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Message } from './Message'
+import css from './message.css'
 
 class MessageList extends Component {
 
@@ -28,7 +29,7 @@ class MessageList extends Component {
   
   render() {
     return (
-      <div>
+      <div className="messageList">
         {this.listOfMessages()}
       </div>
     )

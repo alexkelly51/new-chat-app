@@ -16,9 +16,8 @@ class Message extends Component {
   }
   
   render() {
-    console.log('time prop', this.props.createdAt )
     return (
-      <div>
+      <div className="message">
         <div className="author">{this.props.author}</div>
         <div className="content">{this.props.content}</div>
         <div className="created">{this.time()}</div>

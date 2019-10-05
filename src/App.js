@@ -7,6 +7,9 @@ import { MessageList } from './MessageList'
 const App = () => {
   return (
     <div className="app">
+      <div>
+        Chat place
+      </div>
       <MessageList />
     </div>
   );

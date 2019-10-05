@@ -1,3 +1,11 @@
+.messageList {
+  padding: 20px;
+}
+
+.message {
+  border: solid 1px pink;
+}
+
 .author {
   color: green;
   font-size: 1.8rem;
