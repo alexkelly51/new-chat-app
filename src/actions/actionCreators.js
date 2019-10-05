@@ -17,3 +17,5 @@ export const messageRemove = (index) => (
     dispatch(removeMessage(index))
   }
 )
+
+// THIS FILE ISN'T WORKING!!!! maybe need to connect the dispatch to the store somehow
