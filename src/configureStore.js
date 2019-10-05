@@ -16,5 +16,9 @@ export default function configureStore(preloadedState) {
 
   const store = createStore(messageReducer, preloadedState, composedEnhancers)
 
+  if (process.env.NODE_ENV !== 'production' && module.hot) {
+    module.hot.accept('./reducers/messageReducer', () => store.replaceReducer(messageReducer))
+  }
+
   return store
 }
