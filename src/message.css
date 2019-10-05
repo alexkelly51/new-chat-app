@@ -1,0 +1,13 @@
+.author {
+  color: green;
+  font-size: 1.8rem;
+}
+
+.content {
+  color: blue;
+  font-size: 3rem;
+}
+
+.created {
+  font-size: 1.2rem; 
+}
