@@ -7,8 +7,12 @@ import { addMessage, removeMessage } from './actions'
 
 // For example in here we could add logic to say - getState() and only can add more messages if there are less than 10 in here
 export const messageAdd = (message) => (
-  (dispatch) => {
-    dispatch(addMessage(message))
+  (dispatch, getState) => {
+    const numberOfMessages = getState().messages.length
+
+    if(numberOfMessages < 5) {
+      dispatch(addMessage(message))
+    }
   }
 )
 
@@ -17,5 +21,3 @@ export const messageRemove = (index) => (
     dispatch(removeMessage(index))
   }
 )
-
-// THIS FILE ISN'T WORKING!!!! maybe need to connect the dispatch to the store somehow

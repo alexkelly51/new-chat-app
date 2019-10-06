@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { addMessage } from './actions/actions'
 
 class MessageForm extends Component {
   constructor(props) {
@@ -16,7 +15,11 @@ class MessageForm extends Component {
   }
 
   addMessage = () => {
-    this.props.dispatch(addMessage(this.state.userInput)) 
+    this.props.addMessage(this.state.userInput)
+  }
+
+  limitAddMessage = () => {
+    this.props.onButtonClick(this.state.userInput)
   }
 
   render() {
@@ -31,6 +34,9 @@ class MessageForm extends Component {
         />
         <button onClick={this.addMessage}>
           Send
+        </button>
+        <button onClick={this.limitAddMessage}>
+          Max 5 messages
         </button>
       </div>
     )
